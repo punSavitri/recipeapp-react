@@ -39,7 +39,15 @@ function App() {
   return (
     <div className="App">
       <h1>Recipe App</h1>
-      <RecipeCard />
+      {/* render Recipe Card component */}
+      <div className="recipes">
+        {/* update loading state */}
+        {isLoading && <p>Loading recipes...</p>}
+
+        {/* No results found */}
+        {!isLoading && recipes.length === 0 && <p>No Recipes Found</p>}
+        {!isLoading && recipes.map((recipe) => <RecipeCard key={recipe.idMeal} recipe={recipe} />)}
+      </div>
     </div>
   );
 }
