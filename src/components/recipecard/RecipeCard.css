@@ -1,0 +1,108 @@
+.recipecard {
+  width: 350px;
+  padding-bottom: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  margin: 20px auto;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25a ease;
+}
+.recipecard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.19);
+}
+.recipecard-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.recipecard-body {
+  padding: 18px 20px;
+  text-align: center;
+}
+.recipecard-category {
+  font-weight: bold;
+  background: #ff7043;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 18px;
+  margin-bottom: 10px;
+  font-size: 0.8rem;
+}
+.recipecard-body h3 {
+  margin: 8px 0 12px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+.recipecard-body h4 {
+  margin-top: 16px;
+  font-size: 1rem;
+  color: #444;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 4px;
+}
+.recipecard-body ul {
+  margin-top: 10px;
+  padding-left: 18px;
+  max-height: 140px;
+  overflow-y: auto;
+}
+.recipecard-body ul li {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 6px;
+  list-style: none;
+}
+.view-instructions-btn {
+  margin-top: 15px;
+  padding: 10px 15px;
+  background: #ff7f50;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.view-instructions-btn:hover {
+  background: #ff5722;
+}
+/* pop modal styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+.modal-content {
+  background: #fff;
+  padding: 25px;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 10px;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: fadeIn 0.3s ease-in-out;
+}
+.close-btn {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.close-btn:hover {
+  background: #000;
+}
