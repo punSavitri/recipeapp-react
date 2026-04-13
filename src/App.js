@@ -19,7 +19,7 @@ function App() {
       const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;
       const response = await fetch(apiUrl);
       const data = await response.json();
-      console.log(data);
+      //console.log(data);
 
       //if API return null fallback to empty error
       setRecipes(data.meals || []);
@@ -37,7 +37,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="app">
       <h1>Recipe App</h1>
       {/* render Recipe Card component */}
       <div className="recipes">
