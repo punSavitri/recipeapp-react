@@ -9,17 +9,16 @@ const SearchBar = ({ value, isLoading, handleSubmit, onChange }) => {
           type="text"
           value={value}
           disabled={isLoading}
-          placeholder="Find a recipe..."
-          className="form-control"
+          placeholder="Find a recipe..."          
           onChange={onChange}
         />
         <input
           type="submit"
-          className="btn"
+          
           value="Search"
           disabled={isLoading || !value}
         />{" "}
-        //disabled button if it is Loading or input is empty
+        {/* //disabled button if it is Loading or input is empty */}
       </form>
     </div>
   );

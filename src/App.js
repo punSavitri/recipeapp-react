@@ -17,7 +17,7 @@ function App() {
   const searchRecipes = async () => {
     try {
       setIsLoading(true); //start loading
-      const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;
+      //const apiUrl = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchQuery}`;
       const response = await fetch(apiUrl);
       const data = await response.json();
       //console.log(data);
