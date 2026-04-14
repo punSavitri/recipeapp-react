@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import RecipeCard from "./components/recipecard/RecipeCard";
+import SearchBar from "./components/searchbar/SearchBar";
 
 function App() {
   //loading state to show text while fetching data
@@ -31,14 +32,27 @@ function App() {
     }
   };
 
-  //fetch default recipes on first load
+  //fetch default recipes on first page load
   useEffect(() => {
     searchRecipes();
   }, []);
 
+  //handle form submit from SearchBar component
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    searchRecipes(); //fetch recipes based on searchQuery
+    setSearchQuery(""); //clear input field after search;
+  };
   return (
     <div className="app">
       <h1>Recipe App</h1>
+      {/* SearchBar component */}
+      <SearchBar
+        handleSubmit={handleSubmit}
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        isLoading={isLoading}
+      />
       {/* render Recipe Card component */}
       <div className="recipes">
         {/* update loading state */}
@@ -46,7 +60,10 @@ function App() {
 
         {/* No results found */}
         {!isLoading && recipes.length === 0 && <p>No Recipes Found</p>}
-        {!isLoading && recipes.map((recipe) => <RecipeCard key={recipe.idMeal} recipe={recipe} />)}
+        {!isLoading &&
+          recipes.map((recipe) => (
+            <RecipeCard key={recipe.idMeal} recipe={recipe} />
+          ))}
       </div>
     </div>
   );
