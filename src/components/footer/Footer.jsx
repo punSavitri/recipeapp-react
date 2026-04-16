@@ -12,7 +12,7 @@ const Footer = () => {
           rel="noreferrer"
         >
           Savitri Pun
-        </a>
+        </a>{" "}
         available on{" "}
         <a
           href="https://github.com/punSavitri/recipeapp-react.git"
@@ -21,7 +21,14 @@ const Footer = () => {
         >
           as open-source on GitHub repository
         </a>{" "}
-        and deployed using Hostinger platform
+        and deployed using{" "}
+        <a
+          href="https://recipe-app-react.savitripun.co.uk/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Hostinger platform
+        </a>
       </p>
     </div>
   );
